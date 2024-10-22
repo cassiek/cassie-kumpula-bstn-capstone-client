@@ -145,7 +145,8 @@ DELETE /warehouses/:id
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date. 
 
 Sprint-1: Wed., Oct. 16, 2024 -- Sun., Oct. 20, 2024
-- initial structure, install dependencies (client and server)
+- initial structure, install dependencies (client and server) (done Sun., Oct. 20)
+move the following to sprint-2:
 - create mixins, variables, fonts
 - connect database, knex migrations and seeds
 - create header
@@ -160,6 +161,18 @@ Sprint-1: Wed., Oct. 16, 2024 -- Sun., Oct. 20, 2024
 - create API to GET a single warehouse
 
 Sprint-2: Mon., Oct. 21, 2024 -- Sun., Oct. 27, 2024
+- create mixins, variables, fonts (done Mon., Oct. 21)
+- connect database, knex migrations and seeds
+- create header
+- create footer
+- create inventory page with inventory list
+- create warehouse page with warehouse list
+- create API to GET all inventory
+- create API to GET all warehouses
+- create inventory details
+- create warehouse details
+- create API to GET a single inventory item
+- create API to GET a single warehouse
 - create add inventory item component
 - create API to POST a new inventory item
 - create add warehouse component
