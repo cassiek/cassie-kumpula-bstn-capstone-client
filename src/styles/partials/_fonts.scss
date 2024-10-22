@@ -1,20 +1,13 @@
 @font-face {
-    font-family:;
-    src: url() format(opentype), url() format(truetype);
-    font-weight: 300; /// Where to use?
-    font-style: normal;
-}
-
-@font-face {
-    font-family:;
-    src: url() format(), url() format();
+    font-family: "Archivo", Arial, sans-serif;
+    src: local("Archivo"), url("../../assets/fonts/Archivo-Regular.ttf") fromat(truetype);
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family:;
-    src: url() format(), url() format();
+    font-family: "Archivo", Arial, sans-serif;
+    src: local("Archivo"), url("../../assets/fonts/Archivo-SemiBold.ttf") format(truetype);
     font-weight: 600;
     font-style: normal;
 }
