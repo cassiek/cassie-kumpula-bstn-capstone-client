@@ -96,12 +96,30 @@ Paper sketch, Figma mockup.
 
 Describe your data and the relationships between the data points. You can show this visually using diagrams, or write it out. 
 
-Inventory Table
-- items have the id of the warehouse where they are stored
-- items have their own id
+Inventory I Table
+- item id
+- warehouse id
+- name
+- variant (ie colour)
+- status
+- quantity
+
+Inventory II Table
+- name
+- variants (ie colours)
+- description
+- category 
 
 Warehouse Table
-- warehouses have their own id
+- warehouses id
+- address
+- warehouse name?
+- city
+- country
+- contact name
+- contact position
+- contact phone
+- contact email
 
 ### Endpoints
 
@@ -148,6 +166,7 @@ Sprint-1: Wed., Oct. 16, 2024 -- Sun., Oct. 20, 2024
 - initial structure, install dependencies (client and server) (done Sun., Oct. 20)
 move the following to sprint-2:
 - create mixins, variables, fonts
+- create database, tables
 - connect database, knex migrations and seeds
 - create header
 - create footer
@@ -162,29 +181,30 @@ move the following to sprint-2:
 
 Sprint-2: Mon., Oct. 21, 2024 -- Sun., Oct. 27, 2024
 - create mixins, variables, fonts (done Mon., Oct. 21)
-- connect database, knex migrations and seeds
+- create database, tables (done Wed., Oct. 23)
+- connect database, knex migrations and seeds (done Wed., Oct. 23)
 - create header
 - create footer
 - create inventory page with inventory list
 - create warehouse page with warehouse list
-- create API to GET all inventory
-- create API to GET all warehouses
+- create API to GET all inventory (done Wed., Oct. 23)
+- create API to GET all warehouses (done Wed., Oct. 23)
 - create inventory details
 - create warehouse details
-- create API to GET a single inventory item
-- create API to GET a single warehouse
+- create API to GET a single inventory item (done Wed., Oct. 23)
+- create API to GET a single warehouse (done Wed., Oct. 23)
 - create add inventory item component
-- create API to POST a new inventory item
+- create API to POST a new inventory item (done Wed., Oct. 23)
 - create add warehouse component
-- create API to POST a new warehouse
+- create API to POST a new warehouse (done Wed., Oct. 23)
 - create delete inventory item component
-- create API to DELETE single inventory item
+- create API to DELETE single inventory item (done Wed., Oct. 23)
 - create delete warehouse component
-- create API to DELETE single warehouse component
+- create API to DELETE single warehouse component (done Wed., Oct. 23)
 - create edit inventory component
-- create API to PUT (edit) single inventory item
+- create API to PUT (edit) single inventory item (done Wed., Oct. 23)
 - create edit warehouse component
-- create API to PUT (edit) single warehouse
+- create API to PUT (edit) single warehouse (done Wed., Oct. 23)
 - implement sorting
 - implement searching
 - implement animations in another project
