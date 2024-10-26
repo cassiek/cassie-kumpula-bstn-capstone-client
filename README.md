@@ -111,7 +111,7 @@ Inventory II Table
 - category 
 
 Warehouse Table
-- warehouses id
+- warehouse id
 - address
 - warehouse name?
 - city
@@ -125,22 +125,28 @@ Warehouse Table
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
-GET /
- - get an array of all warehouses
-
-GET /inventory
- - get an array of all inventory
-
 GET /warehouses
  - get an array of all warehouses
 
-POST /inventory
+GET /inventory-i
+ - get an array of all inventory from inventory-i
+
+GET /inventory-ii
+ - get an array of all inventory from inventory-ii
+
+GET /warehouses/:id
+ - get a single warehouse
+
+GET /inventory-i/:id
+ - get a single inventory
+
+POST /inventory-i
  - create new inventory item
 
 POST /warehouses
  - create new warehouse
 
-PUT /inventory/:id
+PUT /inventory-i/:id
  - edit inventory item
 
 PUT /warehouses/:id
@@ -181,30 +187,31 @@ move the following to sprint-2:
 
 Sprint-2: Mon., Oct. 21, 2024 -- Sun., Oct. 27, 2024
 - create mixins, variables, fonts (done Mon., Oct. 21)
-- create database, tables (done Wed., Oct. 23)
-- connect database, knex migrations and seeds (done Wed., Oct. 23)
+- create database (done Wed., Oct. 23)
+- initial structure, install dependencies (server) (done Wed., Oct. 23)
+- connect database, knex migrations and seeds (done Thurs., Oct. 24)
 - create header
 - create footer
 - create inventory page with inventory list
 - create warehouse page with warehouse list
-- create API to GET all inventory (done Wed., Oct. 23)
-- create API to GET all warehouses (done Wed., Oct. 23)
+- create API to GET all inventory (done Thurs., Oct. 24)
+- create API to GET all warehouses (done Thurs., Oct. 24)
 - create inventory details
 - create warehouse details
-- create API to GET a single inventory item (done Wed., Oct. 23)
-- create API to GET a single warehouse (done Wed., Oct. 23)
+- create API to GET a single inventory item (done Thurs., Oct. 24)
+- create API to GET a single warehouse (done Thurs., Oct. 24)
 - create add inventory item component
-- create API to POST a new inventory item (done Wed., Oct. 23)
+- create API to POST a new inventory item (done Thurs., Oct. 24)
 - create add warehouse component
-- create API to POST a new warehouse (done Wed., Oct. 23)
+- create API to POST a new warehouse (done Thurs., Oct. 24)
 - create delete inventory item component
-- create API to DELETE single inventory item (done Wed., Oct. 23)
+- create API to DELETE single inventory item (done Thurs., Oct. 24)
 - create delete warehouse component
-- create API to DELETE single warehouse component (done Wed., Oct. 23)
+- create API to DELETE single warehouse component (done Thurs., Oct. 24)
 - create edit inventory component
-- create API to PUT (edit) single inventory item (done Wed., Oct. 23)
+- create API to PUT (edit) single inventory item (done Thurs., Oct. 24)
 - create edit warehouse component
-- create API to PUT (edit) single warehouse (done Wed., Oct. 23)
+- create API to PUT (edit) single warehouse (done Thurs., Oct. 24)
 - implement sorting
 - implement searching
 - implement animations in another project
