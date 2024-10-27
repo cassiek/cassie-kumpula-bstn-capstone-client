@@ -1,6 +1,6 @@
-import "EditWarehousePage.scss";
+import "./EditWarehousePage.scss";
 import { useState, useEffect } from "react";
-import { Link, usePrarms } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 function EditWarehousePage() {

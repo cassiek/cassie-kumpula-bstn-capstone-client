@@ -1,15 +1,14 @@
-import "InventoryPage.scss";
+import "./InventoryPage.scss";
 import { useState, useEffect } from "react";
-import { Link, usePrarms } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import InventoryList from "../../components/InventoryList/InventoryList.jsx";
 
 function InventoryPage() {
     
     return (
         <main>
-            <ul>
-
-            </ul>
+            <InventoryList />
         </main>
     )
 };

@@ -1,9 +1,8 @@
-import "./AddWarehousePage.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-function AddWarehousePage() {
+function InventoryList() {
     
     return (
         <main>
@@ -14,4 +13,4 @@ function AddWarehousePage() {
     )
 };
 
-export default AddWarehousePage;
+export default InventoryList;
