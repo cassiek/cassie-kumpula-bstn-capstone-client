@@ -1,3 +1,32 @@
-@use "../../styles/partials/fonts";
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/variables";
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+.header {
+    padding: 1rem;
+    background-color: $light-gold;
+    font-family: "Archivo";  ///???
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    &__list {
+        display: flex;
+        align-items: center; ///???
+    }
+    &__list-item {
+
+    }
+    &__logo {
+        text-decoration: none;
+    }
+    &__logo-link {
+        text-decoration: none;
+        color: $charcoal;
+    }
+    &__link {
+        margin-left: 2rem;
+        text-decoration: none;
+        color: $charcoal;
+    }
+}

@@ -1,7 +1,7 @@
-import './App.css'
+import "./App.scss"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+//mport Footer from "./components/Footer/Footer.jsx";
 //import components
 //import pages
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
@@ -31,7 +31,7 @@ function App() {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <Footer />
+        
       </BrowserRouter>
     </>
   )
