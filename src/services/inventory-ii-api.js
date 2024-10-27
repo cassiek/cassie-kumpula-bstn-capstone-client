@@ -14,7 +14,7 @@ export async function getAllProductTypes() {
 }
 
 // Get a single product type in inventory-ii
-export async function getProductType(id) {
+export async function getOneProductType(id) {
     try {
         const url = `${BASE_URL}/inventory-ii/${id}`;
         const response = await axios.get(url);
@@ -26,5 +26,5 @@ export async function getProductType(id) {
 
 export default {
     getAllProductTypes,
-    getProductType
+    getOneProductType
 };

@@ -72,9 +72,9 @@ export async function getWarehouseInventory(id) {
 
 export default {
     getWarehouses,
-    deleteWarehouse,
     getWarehouse,
     editWarehouse,
     addWarehouse,
+    deleteWarehouse,
     getWarehouseInventory,
 };
