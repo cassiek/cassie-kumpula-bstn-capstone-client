@@ -1,9 +1,9 @@
-import "HomePage.scss";
+import "InventoryPage.scss";
 import { useState, useEffect } from "react";
 import { Link, usePrarms } from "react-router-dom";
 import axios from "axios";
 
-function HomePage() {
+function InventoryPage() {
     
     return (
         <main>
@@ -14,4 +14,4 @@ function HomePage() {
     )
 };
 
-export default HomePage;
+export default InventoryPage;
