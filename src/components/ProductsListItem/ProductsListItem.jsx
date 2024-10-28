@@ -12,13 +12,8 @@ function ProductsListItem({ productName, variants, category, description }) {
                 <p>{variants}</p>
                 <h4>CATEGORY</h4>
                 <p>{category}</p>
-                <h4>{description}</h4>
+                <p>{description}</p>
             </div>
-            <div className="product__bottom">
-
-            </div>
-            <img />
-            <img />
         </div>
     )
 };
