@@ -7,7 +7,7 @@ import { getAllProducts, getOneProductType } from "../../services/inventory-ii-a
 
 function AddEditInventoryItemForm() {
     const { id } = useParams();
-    const [dataReceived, setDataReceived] = useState("");
+    //const [dataReceived, setDataReceived] = useState("");
 
     const [inputs, setInputs] = useState({
         warehouse_id: "",

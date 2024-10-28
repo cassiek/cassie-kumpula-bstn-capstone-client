@@ -2,9 +2,37 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { getWarehouses } from "../../services/warehouses-api.js";
 
 function AddEditWarehouseForm() {
-    
+    const { id } = useParams();
+
+    const [inputs, setInputs] = useState({
+        address: "",
+        city: "",
+        country: "",
+        contact_name: "", 
+        contact_position: "",
+        contact_phone: "",
+        contact_email: ""
+    })
+
+    const handleChange = (event) => {
+
+    }
+
+    const handleSubmit = (event) => {
+        ///POST to API
+    }
+
+    useEffect(() => {
+        const fetchWarehouses = async () => {
+            const response = await getWarehouses();
+            setInputs(response.data);
+        };
+        fetchWarehouses();
+    }, []);
+
     return (
         <main>
     
