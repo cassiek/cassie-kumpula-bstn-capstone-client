@@ -34,7 +34,7 @@ function WarehouseList() {
                 phone={item.contact_phone}
                 email={item.contact_email}
                 />
-            ))};  
+            ))}
         </main>
     )
 };

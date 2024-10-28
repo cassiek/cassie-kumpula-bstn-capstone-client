@@ -27,7 +27,7 @@ function InventoryList() {
                 stock={item.status}
                 quantity={item.quantity}
                 />
-            ))};  
+            ))} 
         </main>   
     )
 };

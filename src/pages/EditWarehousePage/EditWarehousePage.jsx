@@ -2,14 +2,13 @@ import "./EditWarehousePage.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import AddEditWarehouseForm from "../../components/AddEditWarehouseForm/AddEditWarehouseForm";
 
 function EditWarehousePage() {
     
     return (
         <main>
-            <ul>
-
-            </ul>
+            <AddEditWarehouseForm />
         </main>
     )
 };

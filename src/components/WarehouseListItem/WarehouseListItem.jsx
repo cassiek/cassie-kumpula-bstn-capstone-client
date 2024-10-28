@@ -1,6 +1,7 @@
 import "./WarehouseListItem.scss";
-// delete icon
-// edit icon
+import deleteIcon from "../../assets/icons/delete_15473236.png";
+import editIcon from "../../assets/icons/pen_3979356.png";
+import { Link } from "react-router-dom";
 
 function WarehouseListItem({ id, address, city, country, contactName, position, phone, email }) {
     return (
@@ -19,8 +20,8 @@ function WarehouseListItem({ id, address, city, country, contactName, position, 
                 <p>{phone}</p>
                 <p>{email}</p>
             </div>
-            <img />
-            <img />
+            <Link to="#"><img className="warehouse__delete-icon" src={deleteIcon} /></Link>
+            <Link to={`/warehouses/${id}/edit`}><img className="warehouse__edit-icon" src={editIcon} /></Link>
         </div>
     )
 };

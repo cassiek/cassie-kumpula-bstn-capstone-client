@@ -1,6 +1,7 @@
 import "./InventoryListItem.scss";
-// delete icon
-// edit icon
+import deleteIcon from "../../assets/icons/delete_15473236.png";
+import editIcon from "../../assets/icons/pen_3979356.png";
+import { Link } from "react-router-dom";
 
 function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity }) {
     return (
@@ -21,8 +22,8 @@ function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity
                 <h4>QTY</h4>
                 <p>{quantity}</p>
             </div>
-            <img />
-            <img />
+            <Link to="#"><img className="inventory__delete-icon" src={deleteIcon} /></Link>
+            <Link to={`/inventory/${id}/edit`}><img className="inventory__edit-icon" src={editIcon} /></Link>
         </div>
     )
 };
