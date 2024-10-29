@@ -7,6 +7,11 @@ import { useState } from "react";
 
 function WarehouseListItem({ id, address, city, country, contactName, position, phone, email }) {
     const [isOpen, setIsOpen] = useState(false);
+
+    const handleCloseModal = () => {
+        setIsOpen(false);
+    };
+
     return (
         <div className="warehouse">
             <div className="warehouse__top">
@@ -32,9 +37,14 @@ function WarehouseListItem({ id, address, city, country, contactName, position, 
             </div>
             <div className="warehouse__buttons">
                 <button className="warehouse__delete-button"><img className="warehouse__delete-icon" src={deleteIcon} onClick={() => setIsOpen(true)}/></button>
-                {isOpen && <DeleteModal setIsOpen={setIsOpen} />}
                 <Link to={`/warehouses/${id}/edit`}><img className="warehouse__edit-icon" src={editIcon} /></Link>
             </div>
+            <DeleteModal
+            isOpen={isOpen}
+            closeModal={handleCloseModal}
+            id={id}
+            type={"warehouse"}
+            />
         </div>
     )
 };

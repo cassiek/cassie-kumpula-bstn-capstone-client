@@ -13,7 +13,6 @@ function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity
         setIsOpen(false);
     };
 
-
     return (
         <div className="inventory">
                 <div className="inventory__left">
@@ -42,7 +41,6 @@ function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity
                     isOpen={isOpen}
                     closeModal={handleCloseModal}
                     id={id}
-                    name={itemName}
                     type={"inventory"}
                 />
         </div>

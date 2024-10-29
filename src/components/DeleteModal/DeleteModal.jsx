@@ -5,7 +5,7 @@ import React from "react";
 import { deleteWarehouse } from "../../services/warehouses-api.js";
 import { deleteItem } from "../../services/inventory-i-api";
 
-function DeleteModal({ isOpen, closeModal, id, name, type }) {
+function DeleteModal({ isOpen, closeModal, id, type }) {
     Modal.setAppElement("#root");
 
     async function deleteSelected() {
