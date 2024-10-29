@@ -1,0 +1,23 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-form {
+    padding: 1rem;
+
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+    &__submit {
+        margin-top: 1rem;
+        @include tablet {
+            width: 18rem;
+        }
+    }
+    &__cancel {
+        padding-top: 1rem;
+    }
+}

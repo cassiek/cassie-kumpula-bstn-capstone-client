@@ -1,4 +1,4 @@
-// import scss
+import "./AddEditInventoryItemForm.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -25,7 +25,7 @@ function AddEditInventoryItemForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //post to API
+        //PUT to API
     }
 
     useEffect(() => {
@@ -62,12 +62,12 @@ function AddEditInventoryItemForm() {
     const rangeTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     return (
-        <section>
+        <section className="edit-form">
             <h1>{id ? "Edit Inventory Item" : "Add New Inventory Item"}</h1>
             <h4>Item Details</h4>
             <form className="item-form" onSubmit={handleSubmit}>
                 <div className="inputs">
-                    <label htmlFor="itemName">ITEM NAME</label>
+                    <label htmlFor="itemName">ITEM NAME</label> <br></br>
                     <select name="itemName" onChange={handleChange}>
                         <option value={inputs.name}>{inputs.name}</option>
                         {productTypes
@@ -78,15 +78,15 @@ function AddEditInventoryItemForm() {
                                 );
                         })
                     }
-                    </select>
-                    <label htmlFor="variant">VARIANT</label>
+                    </select> <br></br>
+                    <label htmlFor="variant">VARIANT</label> <br></br>
                     <select name="variant" onChange={handleChange}>
                         <option value={inputs.variant}>{inputs.variant}</option>
             
             
             
-                    </select>
-                    <label htmlFor="warehouse">WAREHOUSE</label>
+                    </select> <br></br>
+                    <label htmlFor="warehouse">WAREHOUSE</label> <br></br>
                     <select name="warehouse" onChange={handleChange}>
                         <option value={inputs.warehouse_id}>{inputs.warehouse_id}</option>
                         {rangeTen
@@ -96,13 +96,13 @@ function AddEditInventoryItemForm() {
                                     <option value={inputs.warehouse_id}>{item}</option>
                                 );
                         })}
-                    </select>
-                    <label htmlFor="quantity">QTY</label>
+                    </select> <br></br>
+                    <label htmlFor="quantity">QTY</label> <br></br>
                     <input name="quantity" type="number" min="0" value={inputs.quantity} onChange={handleChange}></input>
                 </div>
                 <div className="buttons">
-                    <Link to={`/inventory/`}>CANCEL</Link>
-                    <button type="submit">ADD NEW INVENTORY ITEM</button>
+                    <Link className="buttons__cancel" to={`/inventory/`}>CANCEL</Link>
+                    <button className="buttons__submit" type="submit">SAVE INVENTORY ITEM</button>
                 </div>
             </form>
         </section>

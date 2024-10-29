@@ -1,13 +1,32 @@
-
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 
 .inventory {
-    //display: flex;
-    &__top {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 0.5px solid $charcoal;
 
+    @include tablet {
+        padding: 2rem;
     }
-    &__bottom {
-
+    
+    &__left {
+        width: 35%;
+        flex-wrap: wrap;
+        @include tablet {
+            width: 16rem;
+        }
+    }
+    &__right {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @include tablet {
+            width: 18rem;
+        }
     }
     &__delete-icon {
         width: 1.5rem;
@@ -16,5 +35,23 @@
     &__edit-icon {
         width: 1.5rem;
         height: 1.5rem;
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        width: 10%;
+        margin: 0 0 0 4rem;
+    }
+    &__delete-button {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: #FFFFFF;
+        margin-bottom: 2rem;
+        @include tablet {
+            margin-bottom: 2rem;
+        }
     }
 }

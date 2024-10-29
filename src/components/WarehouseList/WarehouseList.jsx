@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { getWarehouses } from "../../services/warehouses-api.js";
 import WarehouseListItem from "../../components/WarehouseListItem/WarehouseListItem.jsx";
+import "./WarehouseList.scss";
 
 function WarehouseList() {
     const [warehouses, setWarehouses] = useState([]);
@@ -22,7 +23,7 @@ function WarehouseList() {
 
     
     return (
-        <main>
+        <main className="warehouses-list">
             {warehouses.map((item) => (
                 <WarehouseListItem
                 id={item.id}
