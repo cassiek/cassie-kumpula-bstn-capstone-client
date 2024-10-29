@@ -1,13 +1,11 @@
 import "./AddEditInventoryItemForm.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
 import { getItem, updateItem } from "../../services/inventory-i-api.js";
 import { getAllProducts, getOneProductType } from "../../services/inventory-ii-api.js";
 
 function AddEditInventoryItemForm() {
     const { id } = useParams();
-    //const [dataReceived, setDataReceived] = useState("");
 
     const [inputs, setInputs] = useState({
         warehouse_id: "",
@@ -63,12 +61,12 @@ function AddEditInventoryItemForm() {
 
     return (
         <section className="edit-form">
-            <h1>{id ? "Edit Inventory Item" : "Add New Inventory Item"}</h1>
-            <h4>Item Details</h4>
+            <h1 className="">{id ? "Edit Inventory Item" : "Add New Inventory Item"}</h1>
+            <h4 className="edit-form__subheader">Item Details</h4>
             <form className="item-form" onSubmit={handleSubmit}>
                 <div className="inputs">
-                    <label htmlFor="itemName">ITEM NAME</label> <br></br>
-                    <select name="itemName" onChange={handleChange}>
+                    <label className="inputs__label" htmlFor="itemName">ITEM NAME</label> <br></br>
+                    <select className="inputs__select" name="itemName" onChange={handleChange}>
                         <option value={inputs.name}>{inputs.name}</option>
                         {productTypes
                             .filter((item) => item !== inputs.name)
@@ -79,15 +77,15 @@ function AddEditInventoryItemForm() {
                         })
                     }
                     </select> <br></br>
-                    <label htmlFor="variant">VARIANT</label> <br></br>
-                    <select name="variant" onChange={handleChange}>
+                    <label className="inputs__label" htmlFor="variant">VARIANT</label> <br></br>
+                    <select className="inputs__select" name="variant" onChange={handleChange}>
                         <option value={inputs.variant}>{inputs.variant}</option>
             
             
             
                     </select> <br></br>
-                    <label htmlFor="warehouse">WAREHOUSE</label> <br></br>
-                    <select name="warehouse" onChange={handleChange}>
+                    <label className="inputs__label" htmlFor="warehouse">WAREHOUSE</label> <br></br>
+                    <select  className="inputs__select" name="warehouse" onChange={handleChange}>
                         <option value={inputs.warehouse_id}>{inputs.warehouse_id}</option>
                         {rangeTen
                             .filter((item) => item !== inputs.warehouse_id)
@@ -97,7 +95,7 @@ function AddEditInventoryItemForm() {
                                 );
                         })}
                     </select> <br></br>
-                    <label htmlFor="quantity">QTY</label> <br></br>
+                    <label className="inputs__label" htmlFor="quantity">QTY</label> <br></br>
                     <input name="quantity" type="number" min="0" value={inputs.quantity} onChange={handleChange}></input>
                 </div>
                 <div className="buttons">

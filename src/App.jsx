@@ -2,8 +2,6 @@ import "./App.scss"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-//import components
-//import pages
 import WarehousePage from "./pages/WarehousePage/WarehousePage.jsx";
 import InventoryPage from "./pages/InventoryPage/InventoryPage.jsx";
 import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx";
@@ -12,6 +10,7 @@ import AddInventoryItemPage from "./pages/AddInventoryItemPage/AddInventoryItemP
 import EditInventoryItemPage from "./pages/EditInventoryItemPage/EditInventoryItemPage.jsx";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage.jsx";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage.jsx";
+
 
 function App() {
 

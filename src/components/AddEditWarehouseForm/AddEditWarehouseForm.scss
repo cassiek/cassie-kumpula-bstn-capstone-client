@@ -4,6 +4,20 @@
 
 .edit-form {
     padding: 1rem;
+
+    @include tablet {
+        padding: 2rem;
+    }
+}
+
+.inputs {
+
+    &__label {
+        margin-bottom: 1rem;
+    }
+    &__select {
+        margin-bottom: 1rem;
+    }
 }
 
 .buttons {

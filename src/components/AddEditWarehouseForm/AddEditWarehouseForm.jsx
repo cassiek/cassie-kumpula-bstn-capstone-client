@@ -1,12 +1,10 @@
 import "./AddEditWarehouseForm.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
 import { getWarehouse } from "../../services/warehouses-api.js";
 
 function AddEditWarehouseForm() {
     const { id } = useParams();
-    //const [dataReceived, setDataReceived] = useState("");
 
     const [inputs, setInputs] = useState({
         address: "",

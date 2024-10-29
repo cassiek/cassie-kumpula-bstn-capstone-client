@@ -5,28 +5,108 @@
 .header {
     padding: 1rem;
     background-color: $light-gold;
-    font-family: "Archivo";  ///???
+    
+    @include tablet {
+        padding: 1rem 2rem;
+    }
 }
 .nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     &__list {
         display: flex;
-        align-items: center; ///???
-    }
-    &__list-item {
-
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        align-content: center;
+        
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+        }
     }
     &__logo {
         text-decoration: none;
+        font-size: 1.4rem;
+        margin: 1rem 0;
+        @include tablet {
+            font-size: 1.5rem;
+            margin: 1rem 1rem 1rem 0;
+        }
     }
     &__logo-link {
         text-decoration: none;
         color: $charcoal;
+        margin: 0 auto;
+        @include tablet {
+            margin:0;
+            width: 11rem;
+        }
     }
     &__link {
-        margin-left: 2rem;
         text-decoration: none;
-        color: $charcoal;
+        color: $StockPilot-blue;
+        @include tablet {
+            width: fit-content;
+            margin-left: 2rem;
+            align-content: center;
+        }
     }
+    &__list-item {
+        width: fit-content;
+        margin: 1rem auto 0 auto;
+        flex-shrink: 0;
+        align-content: center;
+        @include tablet {
+            margin:0;
+        }
+    }
+    &__add-inventory {
+        margin-top: 1rem;
+        text-decoration: none;
+        padding: 1rem;
+        text-align: center;
+        background-color: $StockPilot-blue;
+        color: $white;
+        border-radius: 0.5rem;
+        @include tablet {
+            margin: 0 0 0 1.5rem;
+            text-decoration: none;
+            padding: 1rem;
+            background-color: $StockPilot-blue;
+            color: $white;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+    }
+    &__add-warehouse {
+        text-align: center;
+        margin-top: 1rem;
+        text-decoration: none;
+        padding: 1rem;
+        background-color: $StockPilot-blue;
+        color: $white;
+        border-radius: 0.5rem;
+        @include tablet {
+            margin: 0 0 0 2rem;
+            text-decoration: none;
+            padding: 1rem;
+            background-color: $StockPilot-blue;
+            color: $white;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+    }
+}
+
+li {
+    list-style: none;
 }

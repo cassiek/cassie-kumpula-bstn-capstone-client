@@ -5,6 +5,21 @@
 .edit-form {
     padding: 1rem;
 
+    @include tablet {
+        padding: 2rem;
+    }
+    &__subheader {
+        margin: 1rem 0;
+    }
+}
+.inputs {
+
+    &__label {
+        margin-bottom: 1rem;
+    }
+    &__select {
+        margin-bottom: 1rem;
+    }
 }
 
 .buttons {
@@ -13,11 +28,24 @@
 
     &__submit {
         margin-top: 1rem;
+        text-decoration: none;
+        padding: 1rem;
+        background-color: $StockPilot-blue;
+        color: $white;
+        border-radius: 0.5rem;
         @include tablet {
             width: 18rem;
         }
     }
     &__cancel {
         padding-top: 1rem;
+        text-decoration: none;
+        color: $StockPilot-blue;
+        
+        @include tablet {
+            width: 18rem;
+            text-align: center;
+        }
     }
 }
+
