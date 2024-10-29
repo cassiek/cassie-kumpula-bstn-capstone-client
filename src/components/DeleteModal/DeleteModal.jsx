@@ -28,8 +28,6 @@ function DeleteModal({ isOpen, closeModal, id, name, type }) {
             isOpen={isOpen}
             onRequestClose={closeModal}
             contentLabel="Delete Modal"
-            className="delete-modal"
-            overlayClassName="delete-modal__overlay"
         >
             <div>
                 <p>Are you sure you want to delete?</p>

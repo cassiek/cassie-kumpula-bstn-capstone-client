@@ -9,12 +9,11 @@ import DeleteModal from "../../components/DeleteModal/DeleteModal.jsx";
 function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleCloseModal = (isDeleted = false) => {
-        if (isDeleted) fetchItems();
+    const handleCloseModal = () => {
         setIsOpen(false);
     };
 
-    
+
     return (
         <div className="inventory">
                 <div className="inventory__left">
@@ -36,11 +35,18 @@ function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity
                     <p>{quantity}</p>
                 </div>
             <div className="inventory__buttons">
-                <button className="inventory__delete-button"><img className="inventory__delete-icon" src={deleteIcon} /></button>
+                <button className="inventory__delete-button" onClick={() => setIsOpen(true)}><img className="inventory__delete-icon" src={deleteIcon} /></button>
                 <Link to={`/inventory/${id}/edit`}><img className="inventory__edit-icon" src={editIcon} /></Link>
             </div>
+                <DeleteModal
+                    isOpen={isOpen}
+                    closeModal={handleCloseModal}
+                    id={id}
+                    name={itemName}
+                    type={"inventory"}
+                />
         </div>
-    )
+    );
 };
 
 export default InventoryListItem;
