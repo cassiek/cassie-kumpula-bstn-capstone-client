@@ -25,6 +25,7 @@ function AddEditInventoryItemForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        
         //PUT to API
     }
 

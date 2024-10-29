@@ -36,10 +36,10 @@ export async function editWarehouse(id, data) {
 }
 
 // add warehouse ==> NEEDS ROUTES
-export async function addWarehouse(warehouseData) {
+export async function addWarehouse(newWarehouse) {
     try {
         const url = `${BASE_URL}/warehouses`;
-        const response = await axios.post(url, warehouseData);
+        const response = await axios.post(url, newWarehouse);
         return response.data;
     } catch(err) {
         return err.response;

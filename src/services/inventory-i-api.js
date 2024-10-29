@@ -25,8 +25,26 @@ export async function getItem(id) {
 }
 
 // Update a single inventory item ==> NEEDS ROUTES
+export async function updateItem(id, data) {
+    try {
+      const url = `${BASE_URL}/inventory-i/${id}`;
+      const response = await axios.put(url, data);
+      return response;
+    } catch(err) {
+      return err.response;
+    }
+}
 
 // Add a new inventory item ==> NEEDS ROUTES
+export async function addItem(newItem) {
+    try {
+      const url = `${BASE_URL}/inventory-i`;
+      const response = await axios.post(url, newItem);
+      return response;
+    } catch(err) {
+      return err.response;
+    }
+}
 
 // Delete an inventory item
 export async function deleteItem(id) {
