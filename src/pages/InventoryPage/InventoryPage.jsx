@@ -8,6 +8,9 @@ function InventoryPage() {
     
     return (
         <main>
+            <nav>
+                <Link to="/inventory/add">Add Inventory</Link>
+            </nav>
             <InventoryList />
         </main>
     )

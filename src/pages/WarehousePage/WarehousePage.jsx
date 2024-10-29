@@ -8,6 +8,9 @@ function WarehousePage() {
     
     return (
         <main>
+            <nav>
+                <Link to="/warehouses/add">Add Warehouse</Link>
+            </nav>
             <WarehouseList />
         </main>
     )

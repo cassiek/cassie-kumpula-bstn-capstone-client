@@ -28,8 +28,7 @@ export async function getItem(id) {
 export async function updateItem(id, data) {
     try {
       const url = `${BASE_URL}/inventory-i/${id}`;
-      const response = await axios.put(url, data);
-      return response;
+      await axios.put(url, data);
     } catch(err) {
       return err.response;
     }

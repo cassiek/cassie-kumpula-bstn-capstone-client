@@ -2,7 +2,7 @@ import "./AddEditInventoryItemForm.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { getItem } from "../../services/inventory-i-api.js";
+import { getItem, updateItem } from "../../services/inventory-i-api.js";
 import { getAllProducts, getOneProductType } from "../../services/inventory-ii-api.js";
 
 function AddEditInventoryItemForm() {
@@ -20,14 +20,13 @@ function AddEditInventoryItemForm() {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
-    }
+        setInputs(prevInputs => ({ ...prevInputs, [name]: value }));
+    };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        
-        //PUT to API
-    }
+        event.preventDefault();  
+        updateItem(id, inputs);
+    };
 
     useEffect(() => {
         const fetchInventoryItem = async () => {
