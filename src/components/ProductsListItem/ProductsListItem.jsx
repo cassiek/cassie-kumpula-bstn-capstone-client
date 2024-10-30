@@ -1,21 +1,19 @@
 import "./ProductsListItem.scss";
-//import del icon
-//import edit icon
 
 function ProductsListItem({ productName, variants, category, description }) {
     return (
         <div className="product">
             <div className="product__left">
-                <h4>NAME</h4>
-                <p>{productName}</p>
-                <h4>VARIANTS</h4>
-                <p>{variants}</p>
+                <h4 className="product__header">NAME</h4>
+                <p className="product__body">{productName}</p>
+                <h4 className="product__header">VARIANTS</h4>
+                <p className="product__body">{variants}</p>
             </div>
             <div className="product__right">
-                <h4>CATEGORY</h4>
-                <p>{category}</p>
-                <h4>DESCRIPTION</h4>
-                <p>{description}</p>
+                <h4 className="product__header">CATEGORY</h4>
+                <p className="product__body">{category}</p>
+                <h4 className="product__header">DESCRIPTION</h4>
+                <p className="product__body">{description}</p>
             </div>
         </div>
     )

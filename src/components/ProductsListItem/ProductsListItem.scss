@@ -25,5 +25,13 @@
 
         }
     }
+    &__header {
+        color: $StockPilot-blue;
+        margin-bottom: 0.2rem; 
+    }
+    &__body {
+        color: $charcoal;
+        margin: 0.2rem 0;
+    }
 
 }

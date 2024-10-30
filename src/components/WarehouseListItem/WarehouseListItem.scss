@@ -10,22 +10,33 @@
     @include tablet {
         padding: 2rem;
     }
-    
-    &__top {
+    &__warehouse {
         width: 35%;
         flex-wrap: wrap;
+        margin-right: 1rem;
         @include tablet {
             width: 16rem;
+            margin-right: 3rem;
         }
     }
-    &__top-details {
+    &__header {
+        color: $StockPilot-blue;
+        margin-bottom: 0.2rem;
+    }
+    &__container--left {
         @include tablet {
             display: flex;
             flex-wrap: wrap;
+            width: 10rem;
         }
     }
-    &__bottom {
-        width: 35%;
+    &__body {
+        color: $charcoal;
+        display: block;
+        margin: 0.2rem 0;
+    }
+    &__contact {
+        width: 50%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -34,10 +45,13 @@
         }
     }
     &__buttons {
-        width: 10%;
+        align-self: center;
         display: flex;
         flex-direction: column;
-        margin: 0 0 0 4rem;
+        margin: 0 0 0 auto;
+        @include desktop {
+            margin: 0 0 0 14rem;
+        }
     }
     &__delete-button {
         width: 1.5rem;
@@ -47,9 +61,6 @@
         border: none;
         background-color: #FFFFFF;
         margin-bottom: 2rem;
-        @include tablet {
-            margin-bottom: 2rem;
-        }
     }
     &__delete-icon {
         width: 1.5rem;
@@ -59,21 +70,16 @@
         width: 1.5rem;
         height: 1.5rem;
     }
-}
-
-.bottom-details {
-
-    &__name-position {
-        @include tablet {
-            display:flex;
-        }
-    }
-
     &__comma {
         display: none;
         @include tablet {
             display: inline;
-            margin-right: 0.4rem;
+            margin: 0.2rem 0.4rem 0.2rem 0;
+        }
+    }
+    &__name-position {
+        @include tablet {
+            display:flex;
         }
     }
 }

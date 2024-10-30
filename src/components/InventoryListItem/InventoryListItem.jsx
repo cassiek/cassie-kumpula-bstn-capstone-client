@@ -16,22 +16,22 @@ function InventoryListItem({ id, warehouseId, itemName, variant, stock, quantity
     return (
         <div className="inventory">
                 <div className="inventory__left">
-                    <div>
-                        <h4>NAME</h4>
-                        <p>{itemName}</p>
-                        <h4>VARIANT</h4>
-                        <p>{variant}</p>
-                        <h4>ID</h4>
-                        <p>{id}</p>
-                    </div>
+                    <h4 className="inventory__header">NAME</h4>
+                    <p className="inventory__body">{itemName}</p>
+                    <h4 className="inventory__header">VARIANT</h4>
+                    <p className="inventory__body">{variant}</p>
+                </div>
+                <div className="inventory__middle">
+                    <h4 className="inventory__header">ID</h4>
+                    <p className="inventory__body">{id}</p>
+                    <h4 className="inventory__header">WAREHOUSE</h4>
+                    <p className="inventory__body">{warehouseId}</p>
                 </div>
                 <div className="inventory__right">
-                    <h4>WAREHOUSE</h4>
-                    <p>{warehouseId}</p>
-                    <h4>STATUS</h4>
-                    <p>{stock}</p>
-                    <h4>QTY</h4>
-                    <p>{quantity}</p>
+                    <h4 className="inventory__header">STATUS</h4>
+                    <p className="inventory__body">{stock}</p>
+                    <h4 className="inventory__header">QTY</h4>
+                    <p className="inventory__body">{quantity}</p>
                 </div>
             <div className="inventory__buttons">
                 <button className="inventory__delete-button" onClick={() => setIsOpen(true)}><img className="inventory__delete-icon" src={deleteIcon} /></button>

@@ -14,25 +14,25 @@ function WarehouseListItem({ id, address, city, country, contactName, position, 
 
     return (
         <div className="warehouse">
-            <div className="warehouse__top">
-                <h4>WAREHOUSE</h4>
-                <div className="top-details">
-                    <p>{id}</p>
-                    <p>{address}</p>
-                    <p>{city}</p>
-                    <p>{country}</p>
+            <div className="warehouse__warehouse">
+                <h4 className="warehouse__header">WAREHOUSE</h4>
+                <div className="warehouse__container--left">
+                    <p className="warehouse__body">{id}</p>
+                    <p className="warehouse__body">{address}</p> 
+                    <p className="warehouse__body">{city}</p>
+                    <p className="warehouse__body">{country}</p>
                 </div>
             </div>
-            <div className="warehouse__bottom">
-                <h4>CONTACT</h4>
-                <div className="bottom-details">
-                    <div className="bottom-details__name-position">
-                        <p className="bottom-details__item">{contactName}</p>
-                        <span className="bottom-details__comma">,</span>
-                        <p className="bottom-details__item">{position}</p>
+            <div className="warehouse__contact">
+                <h4 className="warehouse__header">CONTACT</h4>
+                <div className="warehouse__container--right">
+                    <div className="warehouse__name-position">
+                        <p className="warehouse__body">{contactName}</p>
+                        <span className="warehouse__comma">,</span>
+                        <p className="warehouse__body">{position}</p>
                     </div>
-                    <p>{phone}</p>
-                    <p>{email}</p>
+                    <p className="warehouse__body">{phone}</p>
+                    <p className="warehouse__body">{email}</p>
                 </div>
             </div>
             <div className="warehouse__buttons">
