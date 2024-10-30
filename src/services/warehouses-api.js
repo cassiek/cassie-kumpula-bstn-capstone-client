@@ -24,7 +24,7 @@ export async function getWarehouse(id) {
     }
 }
   
-// edit single warehouse  ==> NEEDS ROUTES
+// edit single warehouse
 export async function editWarehouse(id, data) {
     try {
         const url = `${BASE_URL}/warehouses/${id}`;
@@ -35,7 +35,7 @@ export async function editWarehouse(id, data) {
     }
 }
 
-// add warehouse ==> NEEDS ROUTES
+// add warehouse
 export async function addWarehouse(newWarehouse) {
     try {
         const url = `${BASE_URL}/warehouses`;

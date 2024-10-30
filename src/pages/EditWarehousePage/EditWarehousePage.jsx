@@ -1,11 +1,11 @@
 import "./EditWarehousePage.scss";
-import AddEditWarehouseForm from "../../components/AddEditWarehouseForm/AddEditWarehouseForm";
+import EditWarehouseForm from "../../components/EditWarehouseForm/EditWarehouseForm";
 
 function EditWarehousePage() {
     
     return (
         <main>
-            <AddEditWarehouseForm />
+            <EditWarehouseForm />
         </main>
     )
 };

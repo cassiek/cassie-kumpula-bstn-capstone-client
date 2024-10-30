@@ -1,10 +1,10 @@
-import "./AddEditInventoryItemForm.scss";
+import "./EditInventoryItemForm.scss";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getItem, updateItem } from "../../services/inventory-i-api.js";
 import { getAllProducts, getOneProductType } from "../../services/inventory-ii-api.js";
 
-function AddEditInventoryItemForm() {
+function EditInventoryItemForm() {
     const { id } = useParams();
 
     const [inputs, setInputs] = useState({
@@ -100,11 +100,11 @@ function AddEditInventoryItemForm() {
                 </div>
                 <div className="buttons">
                     <Link className="buttons__cancel" to={`/inventory/`}>CANCEL</Link>
-                    <button className="buttons__submit" type="submit">SAVE INVENTORY ITEM</button>
+                    <button className="buttons__submit" type="submit">{id ? "SAVE INVENTORY ITEM" : "ADD NEW INVENTORY ITEM"}</button>
                 </div>
             </form>
         </section>
     )
 };
 
-export default AddEditInventoryItemForm;
+export default EditInventoryItemForm;

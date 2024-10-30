@@ -33,7 +33,7 @@ function App() {
           <Route path="/inventory" element={<InventoryPage />} />
           <Route path="/inventory/:id" />
           <Route path="/inventory/:id/edit" element={<EditInventoryItemPage />} />
-          <Route path="/inventory/add" element={<AddInventoryItemPage />} />  {/* with an existing product type */}
+          <Route path="/inventory/add" element={<AddInventoryItemPage />} /> 
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

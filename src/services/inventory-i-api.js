@@ -24,7 +24,7 @@ export async function getItem(id) {
     }
 }
 
-// Update a single inventory item ==> NEEDS ROUTES
+// Update a single inventory item 
 export async function updateItem(id, data) {
     try {
       const url = `${BASE_URL}/inventory-i/${id}`;
@@ -34,7 +34,7 @@ export async function updateItem(id, data) {
     }
 }
 
-// Add a new inventory item ==> NEEDS ROUTES
+// Add a new inventory item 
 export async function addItem(newItem) {
     try {
       const url = `${BASE_URL}/inventory-i`;

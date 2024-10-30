@@ -1,11 +1,11 @@
 import "./EditInventoryItemPage.scss";
-import AddEditInventoryItemForm from "../../components/AddEditInventoryItemForm/AddEditInventoryItemForm.jsx";
+import EditInventoryItemForm from "../../components/EditInventoryItemForm/EditInventoryItemForm.jsx";
 
 function EditInventoryItemPage() {
     
     return (
         <main>
-            <AddEditInventoryItemForm />
+            <EditInventoryItemForm />
         </main>
     )
 };

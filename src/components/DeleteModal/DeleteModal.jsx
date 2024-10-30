@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
 import Modal from "react-modal";
 import React from "react";
 import { deleteWarehouse } from "../../services/warehouses-api.js";

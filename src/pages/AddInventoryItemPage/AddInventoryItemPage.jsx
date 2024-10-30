@@ -1,14 +1,10 @@
-//import "./AddIventoryItemPage.scss";
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import AddEditInventoryItemForm from "../../components/AddEditInventoryItemForm/AddEditInventoryItemForm";
+import AddInventoryItemForm from "../../components/EditInventoryItemForm/EditInventoryItemForm";
 
 function AddInventoryItemPage() {
     
     return (
         <main>
-            <AddEditInventoryItemForm />
+            <AddInventoryItemForm />
         </main>
     )
 };

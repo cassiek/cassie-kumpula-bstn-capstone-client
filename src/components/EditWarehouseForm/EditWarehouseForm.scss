@@ -8,6 +8,10 @@
     @include tablet {
         padding: 2rem;
     }
+
+    &__subheader {
+        margin: 1rem 0;
+    }
 }
 
 .inputs {
@@ -15,7 +19,7 @@
     &__label {
         margin-bottom: 1rem;
     }
-    &__select {
+    &__input {
         margin-bottom: 1rem;
     }
 }
