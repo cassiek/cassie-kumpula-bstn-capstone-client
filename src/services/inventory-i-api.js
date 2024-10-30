@@ -30,6 +30,7 @@ export async function updateItem(id, data) {
       const url = `${BASE_URL}/inventory-i/${id}`;
       await axios.put(url, data);
     } catch(err) {
+        console.error(err);
       return err.response;
     }
 }
@@ -41,6 +42,7 @@ export async function addItem(newItem) {
       const response = await axios.post(url, newItem);
       return response;
     } catch(err) {
+        console.error(err);
       return err.response;
     }
 }
@@ -59,5 +61,7 @@ export async function deleteItem(id) {
 export default {
     getInventory,
     getItem,
+    updateItem,
+    addItem,
     deleteItem
 }

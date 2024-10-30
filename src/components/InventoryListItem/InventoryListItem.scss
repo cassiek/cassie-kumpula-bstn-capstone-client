@@ -6,12 +6,11 @@
 .inventory {
     display: flex;
     padding: 1rem;
-    border-bottom: 0.5px solid $charcoal;
+    border-bottom: 1px solid $light-warm-grey;
 
     @include tablet {
         padding: 2rem;
     }
-
     &__left {
         width: 28%;
         flex-wrap: wrap;
@@ -59,9 +58,7 @@
         align-self: center;
         margin: 0 0 0 auto;
         @include desktop {
-            //margin: 0 0 0 7rem;
             margin: 0 0 0 0;
-            //background-color: pink;
         }
     }
     &__delete-button {

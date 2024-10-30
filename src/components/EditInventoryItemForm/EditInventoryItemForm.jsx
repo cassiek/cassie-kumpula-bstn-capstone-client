@@ -1,7 +1,7 @@
 import "./EditInventoryItemForm.scss";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getItem, updateItem } from "../../services/inventory-i-api.js";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { getItem, updateItem, addItem } from "../../services/inventory-i-api.js";
 import { getAllProducts, getOneProductType } from "../../services/inventory-ii-api.js";
 
 function EditInventoryItemForm() {
@@ -21,9 +21,28 @@ function EditInventoryItemForm() {
         setInputs(prevInputs => ({ ...prevInputs, [name]: value }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();  
-        updateItem(id, inputs);
+        // if (id) {
+            // const updatedData = inputs;
+            // delete updatedData.id;
+            // delete updatedData.created_at;
+            // delete updatedData.updated_at;
+            //delete updatedData.warehouse_name;
+            // if (inputs.warehouse_id === "") {
+                // updatedData.warehouse_id = 1;
+                // const response = await updateItem(id, updatedData);
+                // if (response == "OK") {
+                    // return navigate("/inventory");
+                // };
+        // } else {
+            // const resp = await addItem(
+                // inputs.warehouse_id === 0 ? { ...inputs, warehouse_id: 1 } : inputs,
+            // );
+            // if (resp.status === 201) {
+                // return navigate("/inventory");
+            // }
+        // }
     };
 
     useEffect(() => {
