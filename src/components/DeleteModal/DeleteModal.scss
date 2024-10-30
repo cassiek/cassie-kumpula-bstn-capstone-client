@@ -7,20 +7,31 @@
     
 }
 .modal {
-    width: 30%;
-    height: 17rem;
+    margin: 6rem auto;
+    width: 90%;
+    height: 14rem;
     background-color: #FFFFFF;
-    margin: 10rem auto;
-    padding: 4rem;
     border-radius: 1rem;
     border: 1px solid $light-warm-grey;
-    overflow-y: none;
+    padding: 2rem;
+    overflow-y: hidden;
+    @include tablet {
+        width: 28rem;
+        height: 16rem;
+        overflow-y: none;
+        margin:  6rem auto;
+        padding: 3rem;
+        //height: 14rem;
+    }
 
     &__paragraph {
         font-weight: 500;
     }
     &__buttons {
-        margin-top: 2.4rem;
+        margin-top: 1.4rem;
+        @include tablet {
+            margin-top: 2.4rem;
+        }
     }
     &__button {
         border:none;
@@ -29,5 +40,6 @@
         border-radius: 0.5rem;
         background-color: $StockPilot-blue;
         color: #FFFFFF;
+        margin-top: 2rem;
     }
 }
