@@ -42,9 +42,8 @@ function EditWarehouseForm() {
             <h4 className="edit-form__subheader">Warehouse Details</h4>
             <form className="edit-form__warehouse-details" onSubmit={handleSubmit}>
                 <div className="edit-form__warehouse-details">
-                    <label className="inputs__label" htmlFor="address">ADDRESS <br></br>
+                    <label className="inputs__label" htmlFor="address">ADDRESS</label> <br></br>
                     <input className="inputs__input" name="address" value={inputs.address} onChange={handleChange}></input> <br></br>
-                    </label>
                     <label className="inputs__label" htmlFor="city">CITY</label> <br></br>
                     <input className="inputs__input" name="city" value={inputs.city} onChange={handleChange}></input> <br></br>
                     <label className="inputs__label" htmlFor="country">COUNTRY</label> <br></br>

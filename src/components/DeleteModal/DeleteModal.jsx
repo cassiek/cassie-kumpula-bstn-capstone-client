@@ -30,7 +30,7 @@ function DeleteModal({ isOpen, closeModal, id, type }) {
             contentLabel="Delete Modal"
         >
             <div className="modal">
-                <h2 className="modal__paragraph">Are you sure you want to delete this {type ? "warehouse" : "inventory"}?</h2>
+                <h2 className="modal__paragraph">Are you sure you want to delete this {type === "warehouse" ? "warehouse" : "inventory item"}?</h2>
                 <div className="modal__buttons">
                     <button className="modal__button" onClick={closeModal}>CANCEL</button>
                     <button className="modal__button" onClick={deleteSelected} onBlur={closeModal}>DELETE</button>
