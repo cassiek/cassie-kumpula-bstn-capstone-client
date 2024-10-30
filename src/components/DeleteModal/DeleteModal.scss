@@ -1,0 +1,33 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.modal-container {
+    
+    
+}
+.modal {
+    width: 30%;
+    height: 17rem;
+    background-color: #FFFFFF;
+    margin: 10rem auto;
+    padding: 4rem;
+    border-radius: 1rem;
+    border: 1px solid $light-warm-grey;
+    overflow-y: none;
+
+    &__paragraph {
+        font-weight: 500;
+    }
+    &__buttons {
+        margin-top: 2.4rem;
+    }
+    &__button {
+        border:none;
+        margin-right: 2rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: $StockPilot-blue;
+        color: #FFFFFF;
+    }
+}
