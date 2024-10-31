@@ -7,53 +7,54 @@ import { getAllProducts, getOneProductType } from "../../services/inventory-ii-a
 function EditInventoryItemForm() {
     const { id } = useParams();
 
-    const [inputs, setInputs] = useState({
+    const [formData, setFormData] = useState({
         warehouse_id: "",
         name: "",
         variant: "",
         status: "",
-        quantity: ""
-    }) 
-
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(prevInputs => ({ ...prevInputs, [name]: value }));
-    };
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();  
-        // if (id) {
-            // const updatedData = inputs;
-            // delete updatedData.id;
-            // delete updatedData.created_at;
-            // delete updatedData.updated_at;
-            //delete updatedData.warehouse_name;
-            // if (inputs.warehouse_id === "") {
-                // updatedData.warehouse_id = 1;
-                // const response = await updateItem(id, updatedData);
-                // if (response == "OK") {
-                    // return navigate("/inventory");
-                // };
-        // } else {
-            // const resp = await addItem(
-                // inputs.warehouse_id === 0 ? { ...inputs, warehouse_id: 1 } : inputs,
-            // );
-            // if (resp.status === 201) {
-                // return navigate("/inventory");
-            // }
-        // }
-    };
-
+        quantity: "",
+    });
+    
     useEffect(() => {
         const fetchInventoryItem = async () => {
             const response = await getItem(id);
-            setInputs(response.data);
+            setFormData(response.data);
         };
         fetchInventoryItem();
     }, []);
 
-    // need all item names and all warehouses
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (formData.quantity > 0) {
+            formData.status = true;
+        } else {
+            formData.status = false;
+        }
+        //console.log(formData);
+        if (formData.id) {
+            updateItem(formData.id, {
+                "warehouse_id": Number(formData.warehouse_id), 
+                "name": formData.name, 
+                "variant": "pink sparkles", //formData.variant input not done yet
+                "status": Number(formData.status),
+                "quantity": Number(formData.quantity), 
+            });
+        } else {
+            addItem({ 
+                "warehouse_id": Number(formData.warehouse_id), 
+                "name": formData.name, 
+                "variant": "pink sparkles", //formData.variant input not done yet
+                "status": Number(formData.status),
+                "quantity": Number(formData.quantity), 
+            });
+        }
+    };
+
     // need the variants of each item
     // OR do not submit unless valid name, warehouse, variant
     const productTypes = ["Long Tie Belt Coat", "Crochet Knit Sweater", "Long Puffer Jacket",
@@ -84,38 +85,38 @@ function EditInventoryItemForm() {
             <h4 className="edit-form__subheader">Item Details</h4>
             <form className="item-form" onSubmit={handleSubmit}>
                 <div className="inputs">
-                    <label className="inputs__label" htmlFor="itemName">ITEM NAME</label> <br></br>
-                    <select className="inputs__select" name="itemName" onChange={handleChange}>
-                        <option value={inputs.name}>{inputs.name}</option>
+                    <label className="inputs__label" htmlFor="name">ITEM NAME</label> <br></br>
+                    <select className="inputs__select" name="name" id="name" onChange={handleChange}>
+                        <option value={formData.name}>{formData.name}</option>
                         {productTypes
-                            .filter((item) => item !== inputs.name)
+                            .filter((item) => item !== formData.name)
                             .map((item) => {
                                 return (
-                                    <option value={inputs.name}>{item}</option>
+                                    <option value={formData.name}>{item}</option>
                                 );
                         })
                     }
                     </select> <br></br>
                     <label className="inputs__label" htmlFor="variant">VARIANT</label> <br></br>
-                    <select className="inputs__select" name="variant" onChange={handleChange}>
-                        <option value={inputs.variant}>{inputs.variant}</option>
+                    <select className="inputs__select" name="variant" id="variant" onChange={handleChange}>
+                        <option value={formData.variant}>{formData.variant}</option>
             
             
             
                     </select> <br></br>
-                    <label className="inputs__label" htmlFor="warehouse">WAREHOUSE</label> <br></br>
-                    <select  className="inputs__select" name="warehouse" onChange={handleChange}>
-                        <option value={inputs.warehouse_id}>{inputs.warehouse_id}</option>
+                    <label className="inputs__label" htmlFor="warehouse_id">WAREHOUSE</label> <br></br>
+                    <select  className="inputs__select" name="warehouse_id" id="warehouse_id" onChange={handleChange}>
+                        <option value={formData.warehouse_id} type="number">{formData.warehouse_id}</option>
                         {rangeTen
-                            .filter((item) => item !== inputs.warehouse_id)
+                            .filter((item) => item !== formData.warehouse_id)
                             .map((item) => {
                                 return (
-                                    <option value={inputs.warehouse_id}>{item}</option>
+                                    <option value={formData.warehouse_id}>{item}</option>
                                 );
                         })}
                     </select> <br></br>
                     <label className="inputs__label" htmlFor="quantity">QTY</label> <br></br>
-                    <input name="quantity" type="number" min="0" value={inputs.quantity} onChange={handleChange}></input>
+                    <input name="quantity" type="number" min="0" id="quantity" value={formData.quantity} onChange={handleChange}></input>
                 </div>
                 <div className="buttons">
                     <Link className="buttons__cancel" to={`/inventory/`}>CANCEL</Link>
