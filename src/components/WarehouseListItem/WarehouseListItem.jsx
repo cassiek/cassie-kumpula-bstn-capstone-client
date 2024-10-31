@@ -1,7 +1,7 @@
 import "./WarehouseListItem.scss";
 import deleteIcon from "../../assets/icons/delete_15473236.png";
 import editIcon from "../../assets/icons/pen_3979356.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DeleteModal from "../DeleteModal/DeleteModal.jsx";
 import { useState } from "react";
 

@@ -1,6 +1,6 @@
 import "./EditWarehouseForm.scss";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { getWarehouse, editWarehouse, addWarehouse } from "../../services/warehouses-api.js";
 
 function EditWarehouseForm() {

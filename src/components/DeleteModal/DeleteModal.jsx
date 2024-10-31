@@ -12,11 +12,13 @@ function DeleteModal({ isOpen, closeModal, id, type }) {
             const result = await deleteWarehouse(id);
             if (result.status === 204) {
                 closeModal(true);
+                navigate("/warehouses");
             }
         } else if (type === "inventory") {
             const result = await deleteItem(id);
             if (result.status === 204) {
                 closeModal(true);
+                navigate("/inventory");
         }
         closeModal();
         }

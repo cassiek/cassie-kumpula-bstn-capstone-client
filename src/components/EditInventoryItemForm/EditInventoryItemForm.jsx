@@ -7,6 +7,29 @@ import { getAllProducts, getOneProductType } from "../../services/inventory-ii-a
 function EditInventoryItemForm() {
     const { id } = useParams();
 
+    const variantsPerItem = {
+        "Long Tie Belt Coat": ["charcoal", "black", "silver", "grey plaid"], 
+        "Crochet Knit Sweater": ["gold", "burgundy", "plum", "indigo"], 
+        "Long Puffer Jacket": ["black", "white", "graphite", "plum", "pink"],
+        "Mock Turtleneck Dress": ["black", "sage", "olive", "charcoal"], 
+        "Sweatshirt": ["tan", "navy", "warm white", "sage", "beige"], 
+        "Straight Leg Pants": ["black", "graphite", "khaki", "grey plaid"], 
+        "High Waisted Jeans": ["dark", "medium", "light"],
+        "Wide Leg Pants": ["charcoal", "black", "white"], 
+        "Fine Knit Sweater": ["brown", "burgundy", "light grey"], 
+        "Lightweight Cotton Shirt": ["white", "warm white", "silver", "light grey"], 
+        "Chiffon Blouse": ["white", "lilac", "light gold"],
+        "Oxford Shirt": ["white", "light blue", "light grey"], 
+        "Feathersoft Blouse": ["black", "warm white", "grey"], 
+        "Long Sleeve Top": ["white", "warm white", "sage", "light gold"], 
+        "Crew Kneck Long Top": ["charcoal", "navy", "plum", "light blue"],
+        "High Waisted Soft Jeans": ["black", "graphite", "dark", "light"], 
+        "Slacks": ["charcoal", "black", "khaki"], 
+        "Cable Knit Sweater": ["charcoal", "warm white", "white", "light gold", "light blue"], 
+        "Wide Leg Joggers": ["black", "graphite", "navy", "tan"], 
+        "Loafers": ["charcoal", "black", "dark brown"],
+    };
+
     const [formData, setFormData] = useState({
         warehouse_id: "",
         name: "",
@@ -14,18 +37,28 @@ function EditInventoryItemForm() {
         status: "",
         quantity: "",
     });
-    
+    const [currentVariants, setCurrentVariants] = useState([]);
+
     useEffect(() => {
         const fetchInventoryItem = async () => {
             const response = await getItem(id);
             setFormData(response.data);
         };
         fetchInventoryItem();
+        console.log(currentVariants);
     }, []);
+    
+    
+    //setCurrentVariants(variantsPerItem[formData.name]);
+    
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        console.log("before", formData);
+        setFormData({ ...formData, [event.target.name]: event.target.value });
+        //setFormData({ ...formData, [name]: value });
+        console.log("after", formData);
+        setCurrentVariants(variantsPerItem[formData.name]);
+        console.log(currentVariants);
     };
 
     const handleSubmit = (event) => {
@@ -37,21 +70,24 @@ function EditInventoryItemForm() {
         }
         //console.log(formData);
         if (formData.id) {
+            console.log(formData.variant);
             updateItem(formData.id, {
-                "warehouse_id": Number(formData.warehouse_id), 
+                "warehouse_id": formData.warehouse_id, 
                 "name": formData.name, 
-                "variant": "pink sparkles", //formData.variant input not done yet
+                "variant": "pink", 
                 "status": Number(formData.status),
                 "quantity": Number(formData.quantity), 
             });
+            
         } else {
             addItem({ 
                 "warehouse_id": Number(formData.warehouse_id), 
                 "name": formData.name, 
-                "variant": "pink sparkles", //formData.variant input not done yet
+                "variant": "pink", //formData.variant input not done yet
                 "status": Number(formData.status),
                 "quantity": Number(formData.quantity), 
             });
+            
         }
     };
 
@@ -70,12 +106,7 @@ function EditInventoryItemForm() {
     // get all product types -> match current name to array -> get variants
     // if (inputs.name == products[i].name) { variantsArray = products[i].variants }
 
-    function getVariants(item) {
-        if (item.name == inputs.name) {
-            let variants = [...inputs.variants];
-            return variants;
-        }
-    }
+    //let currentVariants = variantsPerItem[formData.name];
 
     const rangeTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -86,32 +117,27 @@ function EditInventoryItemForm() {
             <form className="item-form" onSubmit={handleSubmit}>
                 <div className="inputs">
                     <label className="inputs__label" htmlFor="name">ITEM NAME</label> <br></br>
-                    <select className="inputs__select" name="name" id="name" onChange={handleChange}>
-                        <option value={formData.name}>{formData.name}</option>
+                    <select className="inputs__select" name="name" onChange={handleChange} >
+                        <option value={formData.name}>Item name</option>
                         {productTypes
-                            .filter((item) => item !== formData.name)
                             .map((item) => {
                                 return (
-                                    <option value={formData.name}>{item}</option>
+                                    <option value={item}>{item}</option>
                                 );
                         })
                     }
                     </select> <br></br>
                     <label className="inputs__label" htmlFor="variant">VARIANT</label> <br></br>
-                    <select className="inputs__select" name="variant" id="variant" onChange={handleChange}>
-                        <option value={formData.variant}>{formData.variant}</option>
-            
-            
-            
+                    <select className="inputs__select" name="variant" onChange={handleChange} >
+                        <option value={formData.variant}>Variant</option>
                     </select> <br></br>
                     <label className="inputs__label" htmlFor="warehouse_id">WAREHOUSE</label> <br></br>
                     <select  className="inputs__select" name="warehouse_id" id="warehouse_id" onChange={handleChange}>
-                        <option value={formData.warehouse_id} type="number">{formData.warehouse_id}</option>
+                        <option value={formData.warehouse_id} type="number">Warehouse ID</option>
                         {rangeTen
-                            .filter((item) => item !== formData.warehouse_id)
                             .map((item) => {
                                 return (
-                                    <option value={formData.warehouse_id}>{item}</option>
+                                    <option value={item}>{item}</option>
                                 );
                         })}
                     </select> <br></br>
